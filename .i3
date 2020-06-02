@@ -200,6 +200,6 @@ gaps outer -8
 smart_borders on
 
 #exec --no-startup-id qjackctl &
-exec --no-startup-id sh $HOME/.fehbg &
-exec --no-startup-id picom -b --config ~/.picom.conf &
+exec --no-startup-id sh $HOME/dotfiles/.fehbg &
+exec --no-startup-id picom -b --config $HOME/dotfiles/.picom.conf &
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh &

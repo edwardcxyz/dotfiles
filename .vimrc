@@ -33,6 +33,9 @@
 " Sets how many lines of history VIM has to remember
 set history=500
 
+" Show line numbers
+set number
+
 " Enable filetype plugins
 filetype plugin on
 filetype indent on
@@ -189,7 +192,7 @@ set tw=500
 
 set ai "Auto indent
 set si "Smart indent
-set wrap "Wrap lines
+" set wrap "Wrap lines
 
 
 """"""""""""""""""""""""""""""
@@ -381,5 +384,3 @@ function! VisualSelection(direction, extra_filter) range
     let @/ = l:pattern
     let @" = l:saved_reg
 endfunction
-
-set number

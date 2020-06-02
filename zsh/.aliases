@@ -1,5 +1,0 @@
-# Loaded at end of .zshrc
-alias show-errors='journalctl -p 4 -xb'
-alias print-res="xdpyinfo | awk '/dimensions/{print $2}'"
-alias code="/opt/visual-studio-code-insiders/bin/code-insiders"
-
