@@ -1,0 +1,32 @@
+#autoload -Uz promptinit
+#promptinit
+
+prompt bigfade blue black black white
+
+alias show-errors='journalctl -p 4 -xb'
+alias print-res="xdpyinfo | awk '/dimensions/{print $2}'"
+function weather {
+        curl -s "http://wttr.in/Little%20Rock" | head -n 27
+}
+export PATH=~/bin:$PATH
+eval 
+            fuck () {
+                TF_PYTHONIOENCODING=$PYTHONIOENCODING;
+                export TF_SHELL=zsh;
+                export TF_ALIAS=fuck;
+                TF_SHELL_ALIASES=$(alias);
+                export TF_SHELL_ALIASES;
+                TF_HISTORY="$(fc -ln -10)";
+                export TF_HISTORY;
+                export PYTHONIOENCODING=utf-8;
+                TF_CMD=$(
+                    thefuck THEFUCK_ARGUMENT_PLACEHOLDER $@
+                ) && eval $TF_CMD;
+                unset TF_HISTORY;
+                export PYTHONIOENCODING=$TF_PYTHONIOENCODING;
+                test -n "$TF_CMD" && print -s $TF_CMD
+            }
+        
+
+eval $(thefuck --alias)
+
