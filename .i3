@@ -151,7 +151,7 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'Kill i3?' -B 'Yes, i3 must die.' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -181,7 +181,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # class                 border  bground text    indicator child_border
-client.focused          #333333 #004F00 #FFFFFF #2E9EF4   #004f00
+client.focused          #333333 #F6560E #FFFFFF #2E9EF4   #4A508E
 client.focused_inactive #333333 #5F676A #FFFFFF #484E50   #5F676A
 client.unfocused        #333333 #222222 #888888 #292D2E   #222222
 client.urgent           #2F343A #900000 #FFFFFF #900000   #900000
@@ -191,13 +191,13 @@ client.background       #333333
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 #bar {
-#        status_command i3status
+#        status_command $HOME/bin/conky-i3bar
 #}
 
 for_window [class=".*"] border pixel 3
-#gaps inner 16
-#gaps outer 10
-#smart_borders no_gaps
+gaps inner 8
+gaps outer -8
+smart_borders on
 
 #exec --no-startup-id qjackctl &
 exec --no-startup-id sh $HOME/.fehbg &
