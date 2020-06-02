@@ -1,0 +1,3 @@
+function weather {
+    curl -s "http://wttr.in/Little%20Rock" | head -n 27
+}

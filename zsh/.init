@@ -1,14 +1,7 @@
-#autoload -Uz promptinit
-#promptinit
+export PATH=~/bin:$PATH
 
 prompt bigfade blue black black white
 
-alias show-errors='journalctl -p 4 -xb'
-alias print-res="xdpyinfo | awk '/dimensions/{print $2}'"
-function weather {
-        curl -s "http://wttr.in/Little%20Rock" | head -n 27
-}
-export PATH=~/bin:$PATH
 eval 
             fuck () {
                 TF_PYTHONIOENCODING=$PYTHONIOENCODING;
