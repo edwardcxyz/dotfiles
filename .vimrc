@@ -79,7 +79,6 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'leafOfTree/vim-vue-plugin'
 Plug 'mattn/emmet-vim'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'preservim/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'Yggdroot/indentline'
@@ -106,7 +105,8 @@ function! OnChangeVueSubtype(subtype)
 endfunction
 
 nnoremap <C-p> :Files<CR>
-nnoremap <C-n> :NERDTreeToggle<cr>
+nmap <leader>, :NERDTreeToggle<cr>
+nmap <leader>f :NERDTreeFind<cr>
 nmap <leader>w :w!<cr>no
 nnoremap <Leader>v <c-v> " Remap ctrl+v for visual blockwise mode
 
@@ -115,22 +115,6 @@ function! GitStatus()
   return printf('+%d ~%d -%d', a, m, r)
 endfunction
 set statusline+=%{GitStatus()}
-
-" ---- COC Configuration -------------------------------------------
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-" -------------------------------------------------------------------
 
 " syntax enable
 colorscheme darcula
